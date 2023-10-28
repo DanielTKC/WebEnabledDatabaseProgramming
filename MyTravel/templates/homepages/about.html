@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">About</h2>
+    </div>
+    <ul class="timeline">
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/about/42096.jpg' %} " width="600" height="600" alt="" /></div>
+
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="subheading">Scamming around the world!</h4>
+                </div>
+                <div class="timeline-body"><p class="text-muted">Let us build a memory on your dime that we will always remember ... and so will you.</p></div>
+            </div>
+        </li>                    
+    </ul>
+</div>
+{% endblock %}
