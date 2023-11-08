@@ -568,6 +568,7 @@ pre code {
   flex-wrap: wrap;
   margin-right: -0.75rem;
   margin-left: -0.75rem;
+  
 }
 
 .no-gutters {
@@ -2428,8 +2429,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: green;
-  border-color: #007bff;
+  background-color: #738B13;
+  border-color: #E9D59C;
 }
 .btn-primary:hover {
   color: #fff;

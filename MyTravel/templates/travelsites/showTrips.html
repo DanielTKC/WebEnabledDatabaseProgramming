@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<header class="masthead">
 <div class="container text-center">
+    <div class="masthead-subheading">Choose from our most popular and costly desitinations</div>
     <div class="row">
         <div class="col">
-            <a class="btn btn-primary" href="#" role="button">Africa</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'africa' %}" role="button">Africa</a>
         </div>
         <div class="col">
-            <a class="btn btn-primary" href="#" role="button">Asia</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'asia' %}"  role="button">Asia</a>
         </div>
         <div class="col">
-            <a class="btn btn-primary" href="#" role="button">Australia</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'australia' %}"  role="button">Australia</a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <a class="btn btn-primary" href="#" role="button">Europe</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'europe' %}"  role="button">Europe</a>
         </div>
         <div class="col">
-            <a class="btn btn-primary" href="#" role="button">North America</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'northamerica' %}"  role="button">North America</a>
         </div>
         <div class="col">
-            <a class="btn btn-primary" href="#" role="button">South America</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'southamerica' %}"  role="button">South America</a>
         </div>
     </div>
 </div>
+</header>
 {% endblock %}
