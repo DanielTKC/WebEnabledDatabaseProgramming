@@ -38,8 +38,8 @@ class Customer(models.Model):
         return '%s %s' % (self.first_name, self.last_name)
     
     def save(self):
-        self.first_name = self.first_name.upper
-        self.last_name = self.last_name.upper
+        self.first_name = self.first_name.upper()
+        self.last_name = self.last_name.upper()
         super(Customer, self).save()
 
 
