@@ -16,3 +16,19 @@ def empPageView(request) :
                 "our_emps" : data
             }
             return render(request, 'homepages/displayEmps.html', context) 
+
+def findEmpPageView(request) :
+                return render(request, 'homepages/searchEmps.html')
+            
+def searchEmpPageView(request) :
+                sFirst = request.GET['first_name']
+                sLast = request.GET['last_name']
+                data = Employee.objects.filter(emp_first=sFirst, emp_last=sLast)
+            
+                if data.count() > 0:
+                    context = {
+                        "our_emps" : data
+                    }
+                    return render(request, 'homepages/displayEmps.html', context)
+                else:
+                    return HttpResponse("Not found") 
