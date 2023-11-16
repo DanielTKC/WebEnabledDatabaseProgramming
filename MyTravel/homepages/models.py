@@ -11,13 +11,27 @@ class State(models.Model) :
             state_description = models.CharField(max_length=30)
         
             def __str__(self):
-                return (self.state_description)     
+                return (self.state_description)  
+class Skill(models.Model) :
+            description = models.CharField(max_length=30)
+        
+            def __str__(self):
+                return (self.description)   
 
 class Employee(models.Model):
+            TITLE = (
+                ('Ms.', 'MISS'),
+                ('Mr.', 'MR.'),
+                ('Mrs.', 'MRS.'),
+                ('Miss', 'Miss'),
+                ('Mx.', 'MX.'),
+            )
             emp_first = models.CharField(max_length=20)
             emp_last = models.CharField(max_length=20)
+            emp_title = models.CharField(max_length=4, choices=TITLE, null=True, blank=True)
             emp_state = models.ForeignKey('State', null=True, blank=True, on_delete=models.SET_NULL)
             contact_information = models.OneToOneField(Contact_Information, on_delete=models.CASCADE)
+            emp_skills = models.ManyToManyField('Skill')
             
             def __str__(self): 
                     return (self.emp_first + " " + self.emp_last)    
