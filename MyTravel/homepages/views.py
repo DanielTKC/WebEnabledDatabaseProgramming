@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import State
 from .models import Employee
+from travelsites.models import Customer
+from travelsites.models import Destination
 
 
 # Create your views here.
@@ -95,3 +97,11 @@ def storeEmpPageView(request):
     # Assign the list of employee records to the dictionary key "our_emps"
     context = {"our_emps": data}
     return render(request, "homepages/displayEmps.html", context)
+
+def showCustomersPageView(request) :
+    data = Customer.objects.all()
+
+    context = {
+        "cust" : data
+    }
+    return render(request, 'homepages/showCustomers.html', context)

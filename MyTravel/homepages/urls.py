@@ -6,6 +6,8 @@ from .views import searchEmpPageView
 from .views import findEmpPageView
 from .views import addEmpPageView
 from .views import storeEmpPageView
+from .views import showCustomersPageView
+from .views import showSingleCustomerPageView
 
 urlpatterns = [
     path("", indexPageView, name="index"),
@@ -14,6 +16,8 @@ urlpatterns = [
     path("searchemp/", searchEmpPageView, name="searchemp"),
     path("findemp/", findEmpPageView, name="findemp"), 
     path("addemp/", addEmpPageView, name="addemp"),  
-    path("storeemp/", storeEmpPageView, name="storeemp")
+    path("storeemp/", storeEmpPageView, name="storeemp"),
+    path("customers/" , showCustomersPageView, name="customers"),
+    path("showCustomers/,int:cust_id>/" , showSingleCustomerPageView, name="showSingleCustomer"),
 ]
 
