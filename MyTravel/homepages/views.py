@@ -105,3 +105,13 @@ def showCustomersPageView(request) :
         "cust" : data
     }
     return render(request, 'homepages/showCustomers.html', context)
+
+def showSingleCustomerPageView(request, cust_id) :
+    data = Customer.objects.get(id = cust_id)
+    destinations = data.destinations.all()
+
+    context = {
+        "record" : data,
+        "dest" : destinations
+    }
+    return render(request, 'homepages/editCustomer.html', context)

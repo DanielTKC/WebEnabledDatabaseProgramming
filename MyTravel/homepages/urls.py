@@ -18,6 +18,6 @@ urlpatterns = [
     path("addemp/", addEmpPageView, name="addemp"),  
     path("storeemp/", storeEmpPageView, name="storeemp"),
     path("customers/" , showCustomersPageView, name="customers"),
-    path("showCustomers/,int:cust_id>/" , showSingleCustomerPageView, name="showSingleCustomer"),
+    path("showCustomers/int:cust_id>/" , showSingleCustomerPageView, name="showSingleCustomer"),
 ]
 
