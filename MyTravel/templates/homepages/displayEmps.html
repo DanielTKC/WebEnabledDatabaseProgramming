@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <header class="masthead">
+        <div class="container">
+            {% for emp in our_emps %}
+                <p>
+                    {{ emp.emp_first }}
+                    {{ emp.emp_last }}
+                    {{ emp.contact_information }}
+               </p>  
+            {% endfor %} 
+        </div>
+    </header>
+{% endblock %}  
