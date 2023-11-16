@@ -335,6 +335,11 @@ output {
   display: inline-block;
 }
 
+.seeya{
+  background-color: (100,184,177, .75);
+  border-color: rgb(233,213,156, .75);
+}
+
 summary {
   display: list-item;
   cursor: pointer;
