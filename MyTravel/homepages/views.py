@@ -170,3 +170,12 @@ def addCustomerDestinationPageView(request, cust_id) :
 
     return render(request, 'homepages/addCustomerDest.html', context)
 
+def addCustDestPageView(request) :
+    if request.method == 'POST' :
+        cust_id = request.POST['cust_id']
+        customer = Customer.objects.get(id=cust_id)
+
+        dest = request.POST['cust_dest']
+        customer.destinations.add(Destination.objects.get(id=dest))
+    return showCustomersPageView(request)
+
