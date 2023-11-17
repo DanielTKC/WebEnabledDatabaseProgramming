@@ -107,20 +107,16 @@ def showCustomersPageView(request):
 
 
 def showSingleCustomerPageView(request, cust_id):
-    data = Customer.objects.get(id = cust_id)
+    data = Customer.objects.get(id=cust_id)
     destinations = data.destinations.all()
 
-    context = {
-        "record": data, 
-        "dest": destinations
-        }
+    context = {"record": data, "dest": destinations}
     return render(request, "homepages/editCustomer.html", context)
 
 
 def updateCustomersPageView(request):
     if request.method == "POST":
         cust_id = request.POST["cust_id"]
-        
 
         customer = Customer.objects.get(id=cust_id)
 
@@ -134,8 +130,29 @@ def updateCustomersPageView(request):
         customer.save()
     return showCustomersPageView(request)
 
-def deleteCustomerPageView(request, cust_id) :
-    data = Customer.objects.get(id = cust_id)
+
+def deleteCustomerPageView(request, cust_id):
+    data = Customer.objects.get(id=cust_id)
 
     data.delete()
     return showCustomersPageView(request)
+
+
+def addCustomerPageView(request):
+    if request.method == "POST":
+        customer = Customer()
+
+        
+
+        customer.first_name = request.POST["first_name"]
+        customer.last_name = request.POST["last_name"]
+        customer.user_name = request.POST["user_name"]
+        customer.password = request.POST["password"]
+        customer.email = request.POST["email"]
+        customer.phone = request.POST["phone"]
+
+        customer.save()
+        return showCustomersPageView(request)
+    else :
+        return render(request, 'homepages/addCustomer.html')
+

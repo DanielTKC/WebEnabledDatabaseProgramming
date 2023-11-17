@@ -5,6 +5,8 @@
 
   <div class="container">
     <h1><b>CUSTOMER LIST</b></h1>
+    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'addCustomer' %}">New Customer</a>
+    <br><br>
     {% for customer in cust %}
       <p>
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'showSingleCustomer' cust_id=customer.id %}">Edit</a>
