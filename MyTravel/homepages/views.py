@@ -98,20 +98,34 @@ def storeEmpPageView(request):
     context = {"our_emps": data}
     return render(request, "homepages/displayEmps.html", context)
 
-def showCustomersPageView(request) :
+
+def showCustomersPageView(request):
     data = Customer.objects.all()
 
-    context = {
-        "cust" : data
-    }
-    return render(request, 'homepages/showCustomers.html', context)
+    context = {"cust": data}
+    return render(request, "homepages/showCustomers.html", context)
 
-def showSingleCustomerPageView(request, cust_id) :
-    data = Customer.objects.get(id = cust_id)
+
+def showSingleCustomerPageView(request, cust_id):
+    data = Customer.objects.get(id=cust_id)
     destinations = data.destinations.all()
 
-    context = {
-        "record" : data,
-        "dest" : destinations
-    }
-    return render(request, 'homepages/editCustomer.html', context)
+    context = {"record": data, "dest": destinations}
+    return render(request, "homepages/editCustomer.html", context)
+
+
+def updateCustomersPageView(request):
+    if request.method == "POST":
+        cust_id = request.POST["cust_id"]
+
+        customer = Customer.objects.get(id=cust_id)
+
+        customer.first_name = request.POST["first_name"]
+        customer.last_name = request.POST["last_name"]
+        customer.user_name = request.POST["user_name"]
+        customer.password = request.POST["password"]
+        customer.email = request.POST["email"]
+        customer.phone = request.POST["phone"]
+
+        customer.save()
+    return showCustomersPageView(request)
