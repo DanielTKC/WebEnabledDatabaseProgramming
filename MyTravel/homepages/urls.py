@@ -9,6 +9,7 @@ from .views import storeEmpPageView
 from .views import showCustomersPageView
 from .views import showSingleCustomerPageView
 from .views import updateCustomersPageView
+from .views import deleteCustomerPageView
 
 urlpatterns = [
     path("", indexPageView, name="index"),
@@ -21,5 +22,7 @@ urlpatterns = [
     path("customers/" , showCustomersPageView, name="customers"),
     path("showCustomers/<int:cust_id>/" , showSingleCustomerPageView, name="showSingleCustomer"),
     path("updateCustomers/", updateCustomersPageView, name="updateCust"),
+    path("deleteCustomers/<int:cust_id>/", deleteCustomerPageView, name="deleteCustomer"),
+
 ]
 

@@ -133,3 +133,9 @@ def updateCustomersPageView(request):
 
         customer.save()
     return showCustomersPageView(request)
+
+def deleteCustomerPageView(request, cust_id) :
+    data = Customer.objects.get(id = cust_id)
+
+    data.delete()
+    return showCustomersPageView(request)
