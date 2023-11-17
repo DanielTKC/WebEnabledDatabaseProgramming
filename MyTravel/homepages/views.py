@@ -107,16 +107,20 @@ def showCustomersPageView(request):
 
 
 def showSingleCustomerPageView(request, cust_id):
-    data = Customer.objects.get(id=cust_id)
+    data = Customer.objects.get(id = cust_id)
     destinations = data.destinations.all()
 
-    context = {"record": data, "dest": destinations}
+    context = {
+        "record": data, 
+        "dest": destinations
+        }
     return render(request, "homepages/editCustomer.html", context)
 
 
 def updateCustomersPageView(request):
     if request.method == "POST":
         cust_id = request.POST["cust_id"]
+        
 
         customer = Customer.objects.get(id=cust_id)
 
