@@ -155,4 +155,18 @@ def addCustomerPageView(request):
         return showCustomersPageView(request)
     else :
         return render(request, 'homepages/addCustomer.html')
+    
+def addCustomerDestinationPageView(request, cust_id) :
+    data = Customer.objects.get(id = cust_id)
+    destinations = data.destinations.all()
+
+    avail_dest = Destination.objects.exclude(id__in=data.destinations.all())
+
+    context = {
+        "record" : data,
+        "dest" : destinations,
+        "avail" : avail_dest
+    }
+
+    return render(request, 'homepages/addCustomerDest.html', context)
 

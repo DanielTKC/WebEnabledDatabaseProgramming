@@ -11,6 +11,7 @@ from .views import showSingleCustomerPageView
 from .views import updateCustomersPageView
 from .views import deleteCustomerPageView
 from .views import addCustomerPageView
+from .views import addCustomerDestinationPageView
 
 urlpatterns = [
     path("", indexPageView, name="index"),
@@ -25,6 +26,7 @@ urlpatterns = [
     path("updateCustomers/", updateCustomersPageView, name="updateCust"),
     path("deleteCustomers/<int:cust_id>/", deleteCustomerPageView, name="deleteCustomer"),
     path("addCustomers/", addCustomerPageView, name="addCustomer"),
+    path("addCustomerDestination/<int:cust_id>/", addCustomerDestinationPageView, name="addCustomerDestination"),
 
 
 ]
