@@ -10833,6 +10833,18 @@ header {
   padding-bottom: 6rem;
 }
 
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("{% static 'assets/instrumentbanner.jpeg' %}");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
 section {
   padding-top: 9rem;
   padding-bottom: 9rem;
