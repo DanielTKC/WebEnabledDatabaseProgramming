@@ -1,36 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-
-<!-- About section-->
-
 <div class ="container px-4">
   <div class="row gx-4 justify-content-center text-center">
-    <section id="instruments" class="col-md-6 d-flex flex-column p-3 border mt-5 mt-md-5">
-      <h2>Our Rentals</h2>
-      <p class="lead">Blowout Rentals is the perfect place for you to rent your favorite instrument. We offer both used and new instruments in order to give customers both better selection and pricing.
-      </p>
-      <div class="mt-auto">
-      <a class="btn btn-lg btn-primary" href="#about">Instruments!</a>
-      </div>
-    </section>
-    
-    <section class="col-md-6 d-flex flex-column p-3 border mt-5 mt-md-5" id="about">
+    <section id="about" class="col-md-6 d-flex flex-column p-3 border mt-5 mt-md-5">
       <h2>About Us</h2>
+      <img src="{% static 'assets/milesdavis.jpeg' %}" alt="">
       <p class="lead">Founded in 2018, Blowout Rentals began its story in the basement of a 
         one-story home in the suburbs of Provo, Utah. Due to the increasing popularity of music 
         over the last year, Blowout Rentals has grown tremendously and now has several shops across Utah Valley.
         We offer a wide selection of instrument rentals, ranging from flutes to saxophones and offer various insurance 
         and protection packages to ensure a positive rental experience.
       </p>
-      <div class="mt-auto">
-      <a class="btn btn-lg btn-primary" href="{% url 'about' %}">Learn More!</a>
-      </div>
+      <h2>Our mission: A trumpet in every home!</h2>
     </section>
+    
+
     
   </div>
 </div>
-
 
 {% endblock %}

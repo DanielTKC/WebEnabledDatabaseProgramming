@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import State
+from .models import Contact_Information, State
 from .models import Employee
 from travelsites.models import Customer
 from travelsites.models import Destination
